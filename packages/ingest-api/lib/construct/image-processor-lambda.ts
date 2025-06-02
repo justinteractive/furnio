@@ -1,8 +1,8 @@
+import { join } from 'node:path';
 import { Construct } from 'constructs';
-import { Bucket } from 'aws-cdk-lib/aws-s3';
+import { Bucket, EventType } from 'aws-cdk-lib/aws-s3';
 import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { Runtime } from 'aws-cdk-lib/aws-lambda';
-import { join } from 'path';
 import { S3EventSource } from 'aws-cdk-lib/aws-lambda-event-sources';
 import { PolicyStatement } from 'aws-cdk-lib/aws-iam';
 
@@ -29,7 +29,7 @@ export class ImageProcessorLambda extends Construct {
     });
 
     fn.addEventSource(new S3EventSource(props.uploadBucket, {
-      events: ['s3:ObjectCreated:*'],
+      events: [EventType.OBJECT_CREATED],
     }));
 
     props.uploadBucket.grantReadWrite(fn);

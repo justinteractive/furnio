@@ -7,6 +7,7 @@
 **/lerna-debug.log*
 **/.pnpm-debug.log*
 
+**/zips/
 **/node_modules/
 
 # Optional npm cache directory

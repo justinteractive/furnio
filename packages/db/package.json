@@ -1,0 +1,19 @@
+{
+  "name": "@furnio/db",
+  "version": "1.0.0",
+  "description": "Database package for Furnio",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "eslint . --ext .ts,.tsx"
+  },
+  "peerDependencies": {
+    "mongodb": "^6.17.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22"
+  }
+}

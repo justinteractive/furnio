@@ -1,0 +1,27 @@
+{
+  "name": "image-ingest-api",
+  "version": "1.0.0",
+  "bin": {
+    "cdk-image-pipeline": "bin/app.ts"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "cdk": "cdk"
+  },
+  "dependencies": {
+    "@furnio/db": "workspace:*",
+    "@types/aws-lambda": "^8.10.149",
+    "aws-sdk": "^2.1573.0",
+    "axios": "^1.6.0",
+    "mongodb": "^6.17.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "aws-cdk-lib": "^2.120.0",
+    "constructs": "^10.3.0",
+    "esbuild": "^0.20.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.3"
+  }
+}

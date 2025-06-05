@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "lib": ["ESNext"],
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@furnio/db": ["./packages/db/src"]
+    }
+  }
+}

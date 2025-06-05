@@ -15,11 +15,7 @@
 **/.eslintcache
 
 # dotenv environment variable files
-.en**/v
-.en**/v.development.local
-.en**/v.test.local
-.en**/v.production.local
-.en**/v.local
+**/.env**
 
 **/**/dist
 **/**/.cache

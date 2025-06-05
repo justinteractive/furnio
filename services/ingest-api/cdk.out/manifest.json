@@ -1,0 +1,162 @@
+{
+  "version": "41.0.0",
+  "artifacts": {
+    "FurnioImageIngestAPIStack-dev.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "FurnioImageIngestAPIStack-dev.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "FurnioImageIngestAPIStack-dev": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "FurnioImageIngestAPIStack-dev.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/842be994a0b0254120b902a2375d5bd90efe18bb77d02e918b141c39ad9ea04a.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "FurnioImageIngestAPIStack-dev.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "FurnioImageIngestAPIStack-dev.assets"
+      ],
+      "metadata": {
+        "/FurnioImageIngestAPIStack-dev/FurnioImageUploadBucket/ImageUploadBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FurnioImageUploadBucket55787A4C"
+          }
+        ],
+        "/FurnioImageIngestAPIStack-dev/FurnioImageUploadBucket/ImageUploadBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FurnioImageUploadBucketPolicyB769D7DB"
+          }
+        ],
+        "/FurnioImageIngestAPIStack-dev/FurnioImageUploadBucket/ImageUploadBucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FurnioImageUploadBucketAutoDeleteObjectsCustomResource580906F0"
+          }
+        ],
+        "/FurnioImageIngestAPIStack-dev/FurnioImageUploadBucket/ImageUploadBucket/Notifications/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FurnioImageUploadBucketNotifications41D660CC"
+          }
+        ],
+        "/FurnioImageIngestAPIStack-dev/FurnioImageUploadBucket/ImageUploadBucket/AllowBucketNotificationsToFurnioImageIngestAPIStackdevFurnioImageProcessorLambdaProcessorFunction9627E890": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FurnioImageUploadBucketAllowBucketNotificationsToFurnioImageIngestAPIStackdevFurnioImageProcessorLambdaProcessorFunction9627E890F46F9F74"
+          }
+        ],
+        "/FurnioImageIngestAPIStack-dev/LatestNodeRuntimeMap": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LatestNodeRuntimeMap"
+          }
+        ],
+        "/FurnioImageIngestAPIStack-dev/Custom::S3AutoDeleteObjectsCustomResourceProvider": [
+          {
+            "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
+            "data": true
+          }
+        ],
+        "/FurnioImageIngestAPIStack-dev/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+          }
+        ],
+        "/FurnioImageIngestAPIStack-dev/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+          }
+        ],
+        "/FurnioImageIngestAPIStack-dev/FurnioImageProcessorLambda/ProcessorFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FurnioImageProcessorLambdaProcessorFunctionServiceRole6260FAFE"
+          }
+        ],
+        "/FurnioImageIngestAPIStack-dev/FurnioImageProcessorLambda/ProcessorFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FurnioImageProcessorLambdaProcessorFunctionServiceRoleDefaultPolicy98860A7F"
+          }
+        ],
+        "/FurnioImageIngestAPIStack-dev/FurnioImageProcessorLambda/ProcessorFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FurnioImageProcessorLambdaProcessorFunction51462BC0"
+          }
+        ],
+        "/FurnioImageIngestAPIStack-dev/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BucketNotificationsHandler050a0587b7544547bf325f094a3db834RoleB6FB88EC"
+          }
+        ],
+        "/FurnioImageIngestAPIStack-dev/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BucketNotificationsHandler050a0587b7544547bf325f094a3db834RoleDefaultPolicy2CF63D36"
+          }
+        ],
+        "/FurnioImageIngestAPIStack-dev/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BucketNotificationsHandler050a0587b7544547bf325f094a3db8347ECC3691"
+          }
+        ],
+        "/FurnioImageIngestAPIStack-dev/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/FurnioImageIngestAPIStack-dev/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/FurnioImageIngestAPIStack-dev/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/FurnioImageIngestAPIStack-dev/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "FurnioImageIngestAPIStack-dev"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  },
+  "minimumCliVersion": "2.1005.0"
+}

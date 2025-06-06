@@ -4,7 +4,13 @@
     "composite": true,
     "baseUrl": ".",
     "paths": {
-      "@furnio/db": ["./packages/db/src"]
+      "@furnio/db/*": ["./packages/db/src/*"],
+      "@web/*": ["./services/web/src/*"],
     }
-  }
+  },
+  "references": [
+    {
+      "path": "./services/web"
+    }
+  ]
 }

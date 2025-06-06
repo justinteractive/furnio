@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import { NextIntlClientProvider } from 'next-intl';
-import { getLocale } from 'next-intl/server';
 
 import './globals.css';
 
@@ -24,11 +22,10 @@ export type RootLayoutProps = Readonly<{
   children: React.ReactNode;
 }>;
 export default async function RootLayout({ children }: RootLayoutProps) {
-  const locale = await getLocale();
   return (
-    <html lang={locale}>
+    <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        {children}
       </body>
     </html>
   );

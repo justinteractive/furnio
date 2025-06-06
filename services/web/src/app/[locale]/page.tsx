@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
-import { Profile } from '@web/components/Profile';
-
 export default function App() {
   const t = useTranslations('HomePage');
 
@@ -13,7 +11,6 @@ export default function App() {
           <Link href="/items" className="underline">{t('items')}</Link>
         </li>
       </ul>
-      <Profile />
     </main>
   );
 }

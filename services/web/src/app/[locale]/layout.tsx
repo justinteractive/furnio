@@ -53,7 +53,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
         <NextIntlClientProvider messages={messages}>
           <div className="flex flex-row h-full">
             <MainMenu />
-            <main className="flex-1 overflow-y-auto">
+            <main className="flex-1 overflow-y-auto bg-[#F9FAFC]">
               {children}
             </main>
           </div>

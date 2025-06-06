@@ -1,6 +1,19 @@
 {
   "HomePage": {
     "items": "Artikelen",
-    "save": "Opslaan en zie je wijzigingen direct."
+    "save": "Opslaan en zie uw wijzigingen direct."
+  },
+  "MainMenu": {
+    "items": {
+      "dashboard": "Dashboard",
+      "properties": "Eigenschappen",
+      "items": "Artikelen",
+      "lists": "Lijsten",
+      "people": "Mensen",
+      "search": "Zoeken",
+      "profile": "Profiel",
+      "settings": "Instellingen",
+      "logout": "Uitloggen"
+    }
   }
 }

@@ -2,5 +2,18 @@
   "HomePage": {
     "items": "Items",
     "save": "Save and see your changes instantly."
+  },
+  "MainMenu": {
+    "items": {
+      "dashboard": "Dashboard",
+      "properties": "Properties",
+      "items": "Items",
+      "lists": "Lists",
+      "people": "People",
+      "search": "Search",
+      "profile": "Profile",
+      "settings": "Settings",
+      "logout": "Logout"
+    }
   }
 }

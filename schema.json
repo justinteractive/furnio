@@ -41,7 +41,7 @@
             "postcode": "could be zip",
             "country": "country",
             "lat": "latitude",
-            "lng": "longitude",
+            "lng": "longitude"
         },
         "notes": "text",
         "date_added": "date",

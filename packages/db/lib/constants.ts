@@ -1,2 +1,2 @@
 export const MongoDBUri = process.env.MONGODB_URI || 'mongodb://localhost:27017';
-export const InventoryDB = 'inventory';
+export const InventoryDatabase = 'inventory';

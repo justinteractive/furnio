@@ -1,62 +1,22 @@
-import { ObjectId, Document } from 'mongodb';
+import z from 'zod';
+
+import * as schema from './schema';
+
+export type Document = z.infer<typeof schema.DocumentSchema>;
+export type Tag = z.infer<typeof schema.TagSchema>;
+export type TagsArray = z.infer<typeof schema.TagsArraySchema>;
+export type Address = z.infer<typeof schema.AddressSchema>;
+export type ListItem = z.infer<typeof schema.ListItemSchema>;
+export type Organisation = z.infer<typeof schema.OrganisationDocumentSchema>;
+export type Property = z.infer<typeof schema.PropertyDocumentSchema>;
+export type Room = z.infer<typeof schema.RoomDocumentSchema>;
+export type Item = z.infer<typeof schema.ItemDocumentSchema>;
 
 export enum MongoCollections {
   Organisations = 'organisations',
   Properties = 'properties',
   Rooms = 'rooms',
   Items = 'items',
-}
-
-export interface Address {
-  line_1: string;
-  line_2: string;
-  line_3: string;
-  town: string;
-  county: string;
-  postcode: string;
-  country: string;
-  lat: number;
-  lng: number;
-}
-
-export interface MongoDocument extends Document {
-  _id: ObjectId;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-export interface Item extends MongoDocument {
-  title: string;
-  weight: number;
-  width: number;
-  depth: number;
-  height: number;
-  carbon: number;
-  quantity: number;
-  privateNotes: string;
-  productDescription: string;
-  propertyId: string;
-  createdBy: string;
-  tags: Array<string>;
-}
-
-export interface Organisation extends MongoDocument {
-  name: string;
-  avatar: string;
-  domain: string;
-}
-
-export interface Property extends MongoDocument {
-  name: string;
-  avatar: string;
-  address: Address;
-  notes: string;
-}
-
-export interface Room extends MongoDocument {
-  name: string;
-  floor: number;
-  propertyId: string;
 }
 
 // export interface Asset extends MongoObject {
@@ -66,7 +26,6 @@ export interface Room extends MongoDocument {
 //   propertyId: string;
 //   createdBy: string;
 // }
-
 
 // export interface floor {
 //     "id": "unique_id",

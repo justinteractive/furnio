@@ -15,5 +15,8 @@
       "settings": "Settings",
       "logout": "Logout"
     }
-  }
+  },
+  "PropertyListPage": {},
+  "PropertyDetailsPage": {},
+  "PropertyItemsPage": {}
 }

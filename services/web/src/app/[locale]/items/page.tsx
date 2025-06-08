@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
-import { ItemsList } from './_components/ItemsList';
+
+import { ItemsList } from '@web/components/items/ItemsList';
 
 export default function ItemsPage() {
   return (

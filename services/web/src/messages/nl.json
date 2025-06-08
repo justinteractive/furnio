@@ -15,5 +15,8 @@
       "settings": "Instellingen",
       "logout": "Uitloggen"
     }
-  }
+  },
+  "PropertyListPage": {},
+  "PropertyDetailsPage": {},
+  "PropertyItemsPage": {}
 }

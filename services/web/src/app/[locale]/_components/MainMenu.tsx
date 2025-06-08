@@ -31,11 +31,15 @@ export function MainMenu() {
             <li className="p-2">
               <Link href="/" className="hover:underline">{t('items.dashboard')}</Link>
             </li>
-            <li className="p-2">{t('items.properties')}</li>
-            <li className="p-2">{t('items.items')}</li>
-            <li className="p-2">{t('items.lists')}</li>
+            <li className="p-2">
+              <Link href="/properties" className="hover:underline">{t('items.properties')}</Link>
+            </li>
+            <li className="p-2">
+              <Link href="/items" className="hover:underline">{t('items.items')}</Link>
+            </li>
+            {/* <li className="p-2">{t('items.lists')}</li>
             <li className="p-2">{t('items.people')}</li>
-            <li className="p-2">{t('items.search')}</li>
+            <li className="p-2">{t('items.search')}</li> */}
           </ul>
         </nav>
       </header>

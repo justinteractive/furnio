@@ -1,5 +1,5 @@
 {
-  "name": "furnio-web",
+  "name": "furnio/web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,6 +11,7 @@
   "dependencies": {
     "@auth0/nextjs-auth0": "^4.6.1",
     "@furnio/db": "workspace:*",
+    "axios": "^1.9.0",
     "mongodb": "^6.17.0",
     "next": "15.3.3",
     "next-intl": "^4.1.0",

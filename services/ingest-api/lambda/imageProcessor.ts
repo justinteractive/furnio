@@ -2,7 +2,7 @@ import { S3Event, S3Handler } from 'aws-lambda';
 import AWS from 'aws-sdk';
 import axios from 'axios';
 
-import { getClient, getDb } from '@furnio/db';
+import { getClient, getDb } from '@db';
 
 const uploadBucket = new AWS.S3();
 // AWS S3-protocol compatible bucket via Cloudflare

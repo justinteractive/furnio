@@ -1,5 +1,5 @@
 {
-  "name": "image-ingest-api",
+  "name": "@furnio/ingest-api",
   "version": "1.0.0",
   "bin": {
     "cdk-image-pipeline": "bin/app.ts"

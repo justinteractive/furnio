@@ -1,16 +1,9 @@
 import { z } from 'zod';
+import type { ObjectId } from 'mongodb';
 
 import * as schema from './schema';
 
-export type Document = z.infer<typeof schema.DocumentSchema>;
-export type Tag = z.infer<typeof schema.TagSchema>;
-export type TagsArray = z.infer<typeof schema.TagsArraySchema>;
-export type Address = z.infer<typeof schema.AddressSchema>;
-export type ListItem = z.infer<typeof schema.ListItemSchema>;
-export type Organisation = z.infer<typeof schema.OrganisationDocumentSchema>;
-export type Property = z.infer<typeof schema.PropertyDocumentSchema>;
-export type Room = z.infer<typeof schema.RoomDocumentSchema>;
-export type Item = z.infer<typeof schema.ItemDocumentSchema>;
+export { ObjectId } from 'mongodb';
 
 export enum MongoCollections {
   Organisations = 'organisations',
@@ -18,6 +11,37 @@ export enum MongoCollections {
   Rooms = 'rooms',
   Items = 'items',
 }
+
+// Utility type to recursively replace ObjectId with string
+export type SerializeObjectIds<T> = T extends ObjectId
+? string
+: T extends Array<infer U>
+  ? Array<SerializeObjectIds<U>>
+  : T extends object
+    ? T extends Date // Preserve Date types
+      ? T
+      : { [K in keyof T]: SerializeObjectIds<T[K]> }
+    : T;
+
+// Embedded types
+export type Document = z.infer<typeof schema.DocumentSchema>;
+export type Tag = z.infer<typeof schema.TagSchema>;
+export type TagsArray = z.infer<typeof schema.TagsArraySchema>;
+export type Address = z.infer<typeof schema.AddressSchema>;
+
+// Document types
+export type ListItemDocument = z.infer<typeof schema.ListItemSchema>;
+export type OrganisationDocument = z.infer<typeof schema.OrganisationDocumentSchema>;
+export type PropertyDocument = z.infer<typeof schema.PropertyDocumentSchema>;
+export type RoomDocument = z.infer<typeof schema.RoomDocumentSchema>;
+export type ItemDocument = z.infer<typeof schema.ItemDocumentSchema>;
+
+// [Document]Output types
+export type ListItemOutput = SerializeObjectIds<ListItemDocument>;
+export type OrganisationOutput = SerializeObjectIds<OrganisationDocument>;
+export type PropertyOutput = SerializeObjectIds<PropertyDocument>;
+export type RoomOutput = SerializeObjectIds<RoomDocument>;
+export type ItemOutput = SerializeObjectIds<ItemDocument>;
 
 // export interface Asset extends MongoObject {
 //   itemId: string;

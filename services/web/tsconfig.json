@@ -25,6 +25,6 @@
     ],
     "composite": true
   },
-  "include": ["src", ".next/types/**/*.ts"],
+  "include": ["src", ".next/types/**/*.ts", "../../packages/db"],
   "exclude": ["node_modules"],
 }

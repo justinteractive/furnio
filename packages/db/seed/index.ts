@@ -1,9 +1,8 @@
-import { collection, connect, MongoCollections } from '../lib';
+import { collection, MongoCollections } from '../lib';
 
 import { organisations, properties, rooms } from './data';
 
 async function main(): Promise<void> {
-  await connect();
   await Promise.all([
     collection(MongoCollections.Organisations).insertMany(organisations),
     collection(MongoCollections.Properties).insertMany(properties),

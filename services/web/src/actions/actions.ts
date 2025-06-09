@@ -1,6 +1,6 @@
 'use server';
 
-import { getClient, InventoryDB } from '@furnio/db';
+import { getClient, InventoryDB } from '@db';
 import { revalidatePath } from 'next/cache';
 
 export async function createProperty(prevState: any, formData: FormData) {

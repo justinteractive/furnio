@@ -1,4 +1,4 @@
-import { getClient, InventoryDB } from '@furnio/db';
+import { getClient, InventoryDB } from '@db';
 
 export async function ItemsList() {
   const client = await getClient();

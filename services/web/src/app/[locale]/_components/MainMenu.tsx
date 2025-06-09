@@ -1,31 +1,19 @@
-'use client';
-
+import { Suspense } from 'react';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
-import Select from 'react-select';
+import { getTranslations } from 'next-intl/server';
 
-type Option = {
-  value: string;
-  label: string;
-};
+import { listOrganisations } from '@web/services/organisations/listOrganisations';
 
-export function MainMenu() {
-  const t = useTranslations('MainMenu');
-  const options: Option[] = [
-    { value: 'organisation', label: 'My Organisation' }
-  ];
+import { OrganisationSelect } from './OrganisationSelect';
+
+export async function MainMenu() {
+  const organisations = await listOrganisations();
+  const t = await getTranslations('MainMenu');
 
   return (
     <aside className="w-2xs h-full flex flex-col justify-between p-4 border-r-[1px]">
       <header>
-        <form className="text-center">
-          <Select<Option>
-                  placeholder="Organisations..."
-                  options={options}
-                  defaultValue={options[0]}
-                  isSearchable={false}
-                  name="organisation" />
-        </form>
+        <OrganisationSelect organisations={organisations} />
         <nav>
           <ul className="px-8 pt-8">
             <li className="p-2">

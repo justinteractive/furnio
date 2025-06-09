@@ -1,12 +1,10 @@
 import { MongoClient } from 'mongodb';
 
 import { MongoDBUri } from './constants';
+console.log('MongoDBUri', MongoDBUri);
+export const mongoClient = new MongoClient(MongoDBUri);
 
-let mongoClient: MongoClient;
-
-export async function getClient(): Promise<MongoClient> {
-  if (mongoClient) return mongoClient;
-  mongoClient = new MongoClient(MongoDBUri);
+export async function connect(): Promise<MongoClient> {
   await mongoClient.connect();
   return mongoClient;
 }

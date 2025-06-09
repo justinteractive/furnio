@@ -9,14 +9,18 @@
     "build": "tsc",
     "watch": "tsc -w",
     "lint": "eslint . --ext .ts,.tsx",
-    "test": "vitest"
+    "test": "vitest",
+    "seed": "npx tsx seed"
   },
   "peerDependencies": {
     "mongodb": "^6.17.0",
     "zod": "^3.25.56"
   },
   "devDependencies": {
+    "@faker-js/faker": "^9.8.0",
     "@types/node": "^22",
+    "dotenv": "^16.5.0",
+    "tsx": "^4.19.4",
     "vitest": "^3.2.2"
   }
 }

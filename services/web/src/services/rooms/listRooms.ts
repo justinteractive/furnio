@@ -1,13 +1,13 @@
 import { connect } from '@db/connect';
 import { InventoryDatabase } from '@db/constants';
-import { Collections, PropertyDocument, PropertyOutput } from '@db/types';
+import { Collections, RoomDocument, RoomOutput } from '@db/types';
 import { serializeObjectIds } from '@db/utils/serializeObjectIds';
 
-export async function listProperties(): Promise<Array<PropertyOutput>> {
+export async function listRooms(): Promise<Array<RoomOutput>> {
   const client = connect();
   const db = client.db(InventoryDatabase);
 
-  const items = await db.collection<PropertyDocument>(Collections.Properties).find({})
+  const items = await db.collection<RoomDocument>(Collections.Rooms).find({})
     .sort({ name: 1 })
     .toArray();
 

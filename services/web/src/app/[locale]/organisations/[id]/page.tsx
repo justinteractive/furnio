@@ -5,7 +5,7 @@ import { getOrganisationById } from '@web/services/organisations/getOrganisation
 export type OrganisationDetailsPageProps = Readonly<{
   params: Promise<{
     id: string;
-  }>
+  }>;
 }>;
 export default async function OrganisationDetailsPage({ params }: OrganisationDetailsPageProps) {
   const { id } = await params;

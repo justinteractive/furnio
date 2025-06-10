@@ -1,18 +1,23 @@
-import { Suspense } from 'react';
+import { notFound } from 'next/navigation';
 
-import { PropertyDetailsLoader } from './_components/PropertyDetailsLoader';
+import { getPropertyById } from '@web/services/properties/getPropertyById';
 
-type PropertyDetailsPageProps = Readonly<{
-  params: Promise<{ id: string; }>;
+export type PropertyDetailsPageProps = Readonly<{
+  params: Promise<{
+    id: string;
+  }>;
 }>;
+export default async function PropertyDetailsPage({ params }: PropertyDetailsPageProps) {
+  const { id } = await params;
+  const property = await getPropertyById(id);
 
-export default function PropertyDetailsPage({ params }: PropertyDetailsPageProps) {
+  if (!property) {
+    notFound();
+  }
+
   return (
     <main className="p-8">
-      <p>PropertyDetailsPage</p>
-      <Suspense fallback="Loading details...">
-        <PropertyDetailsLoader params={params} />
-      </Suspense>
+      <p>Ze Property Details page: {property.name}</p>
     </main>
   );
 }

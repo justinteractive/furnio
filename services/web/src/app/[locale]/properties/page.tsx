@@ -1,16 +1,18 @@
+import { listProperties } from '@web/services/items/listItems';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
 
-export default function PropertyListPage() {
-  const t = useTranslations('PropertyListPage');
+export default async function PropertyListPage() {
+  const properties = await listProperties();
 
   return (
     <main className="p-8">
-      <p>PropertyListPage</p>
+      <p>Properties:</p>
       <ul>
-        <li>
-          <Link href="/properties/my_property">my_property</Link>
-        </li>
+        {properties.map(property => (
+          <li key={property._id}>
+            <Link href={`/properties/${property._id}`} className="underline block p-2">{property.name}</Link>
+          </li>
+        ))}
       </ul>
     </main>
   );

@@ -5,7 +5,7 @@ import * as schema from './schema';
 
 export { ObjectId } from 'mongodb';
 
-export enum MongoCollections {
+export enum Collections {
   Organisations = 'organisations',
   Properties = 'properties',
   Rooms = 'rooms',
